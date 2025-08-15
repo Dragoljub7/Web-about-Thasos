@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Web site" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit.css">
+    <title>Where to Go on Thassos</title>
+</head>
+<body>
+
+
+    <h1>Where to go on Thassos</h1>
+
+    <div class="topMenu">
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/main.html" target="_blank">Main</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/about.html" target="_blank">About</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/best.html" target="_blank">Best beaches</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/where.html" target="_blank">Where to go</a>
+            </div>
+    </div>
+
+<div class="container">
+    <img src="potos2.jpg" alt="Potos map" style="width:500px; border-radius:10px;align-items: center; border:#023047 solid 8px; display:block; margin:30px 0 0 0;">
+    <img src="limenas2.jpg" alt="Pachis map" style="width:500px; border-radius:10px;align-items: center; border:#023047 solid 8px; display:block; margin:30px 0 0 0;">
+    <img src="limenarija2.jpg" alt="Limenas map" style="width:500px; border-radius:10px;align-items: center; border:#023047 solid 8px; display:block; margin:30px 0 0 0;">
+    <img src="skala2.jpg" alt="Limenas map" style="width:500px; border-radius:10px;align-items: center; border:#023047   solid 8px; display:block; margin:30px 0 0 0;">
+</div>
+    <style>
+    
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 20px;
+      }
+    </style>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        border-bottom: 1000px 
+      }
+    </style>
+<div class="card-slider">
+      <div class="card">
+        <img src="skala.jpg" alt="Skala Potamia" style="width: 100%;  border: rgb(203,151,74) solid 8px;">
+        <h2><a href="https://en.wikipedia.org/wiki/Skala_Potamia">Skala Potamia</a></h2>
+        <p>Located next to Golden Beach, one of the most beautiful beaches on the island. </p>
+      </div>
+      <div class="card active">
+        <img src="limenarija.jpg" alt="Limenaria" style="width: 100%;  border: rgb(203,151,74) solid 8px;">
+        <h2><a href="https://en.wikipedia.org/wiki/Limenaria,_Thasos">Limenaria</a></h2>
+        <p>Limenaria Beach is located near the village of Potos on Thassos.</p>
+      </div>
+      <div class="card">
+        <img src="Limenas-Thassos.webp" alt="Limenas" style="width: 100%;  border: rgb(203,151,74) solid 8px;">
+        <h2><a href="https://en.wikipedia.org/wiki/Limenas,_Thasos">Limenas</a></h2>
+        <p>The capital of Thassos, also known as Thassos Town.    </p>
+      </div>
+      <div class="card">
+        <img src="potos.jpg" alt="Potos" style="width: 100%;  border: rgb(203,151,74) solid 8px;">
+        <h2><a href="https://en.wikipedia.org/wiki/Potos,_Thasos">Potos</a></h2>
+        <p> A small tourist village in the south of Thassos.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <button class="button" id="prevBtn" style="background:rgb(255, 153, 0); color:#272727; border:none; border-radius:6px; padding:10px 24px; font-size:18px; margin-right:10px; cursor:pointer;">PREV</button>
+  <button class="button" id="nextBtn" style="background:#272727; color:rgb(255, 153, 0); border:none; border-radius:6px; padding:10px 24px; font-size:18px; cursor:pointer;">NEXT</button>
+    </div>
+
+
+    <script>
+    const cards = document.querySelectorAll('.card-slider .card');
+    let activeIndex = Array.from(cards).findIndex(card => card.classList.contains('active'));
+    if (activeIndex === -1) activeIndex = 0;
+    function updateActiveCard() {
+      cards.forEach((card, i) => {
+        card.classList.toggle('active', i === activeIndex);
+      });
+    }
+    document.getElementById('prevBtn').onclick = function() {
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+      updateActiveCard();
+    };
+    document.getElementById('nextBtn').onclick = function() {
+      activeIndex = (activeIndex + 1) % cards.length;
+      updateActiveCard();
+    };
+    </script>
+</body>
+</html>

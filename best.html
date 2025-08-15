@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Web site" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit.css">
+    <title>Best beaches on Thassos</title>
+    
+</head>
+<body>
+
+    <h1>Welcome to the Best Beaches on Thassos</h1>
+        
+    <div class="topMenu">
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/main.html" target="_blank">Main</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/about.html" target="_blank">About</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/best.html" target="_blank">Best beaches</a>
+            </div>
+            <div class="menuItem">
+                <a href="file:///C:/Users/Uporabnik/Desktop/Web%20site/where.html" target="_blank">Where to go</a>
+            </div>
+    </div>
+    <table class="themeTable">
+  <tr>
+    <th>Beach</th>
+    <th>Rating</th>
+    <th>Location</th>
+  </tr>
+  <tr>
+    <td>Golden Beach</td>
+    <td>4,6<span style="font-size:200%;color:yellow;position: relative; top: 2px;">★</span>
+
+</td>
+    <td>East Thassos</td>
+  </tr>
+  <tr>
+    <td>Pachis Beach</td>
+    <td>4,6<span style="font-size:200%;color:yellow;position: relative; top: 2px;">★</span>
+
+</td>
+    <td>North Thassos</td>
+  </tr>
+  <tr>
+    <td>Aliki Beach</td>
+    <td>4,0<span style="font-size:200%;color:yellow;position: relative; top: 2px;">★</span>
+
+</td>
+    <td>South Thassos</td>
+  </tr>
+  <tr>
+    <td>Psili Ammos</td>
+    <td>4,5<span style="font-size:200%;color:yellow;position: relative; top: 2px;">★</span>
+</td>
+    <td>South Thassos</td>
+  </tr>
+</table>
+
+
+<img src="thass.png" alt="Beautiful view of Thassos" style="width: 500px; border-radius: 12px; border: #023047 solid 8px; display: block; margin: 0 auto;"> 
+<p style="text-align: center;">Discover the beauty of Thassos through this stunning image that captures the essence of the island's landscapes.</p>
+
+<div class="card-slider">
+  <div class="card">
+    <img src="golden.beach.jpg" alt="Golden Beach">
+    <h2>Golden Beach</h2>
+    <p>Soft golden sand and shallow waters, perfect for families.</p>
+  </div>
+  <div class="card active">
+    <img src="giola-laguna.jpg" alt="Giola Lagoon">
+    <h2>Giola Lagoon</h2>
+    <p>Natural rocky pool with turquoise water for adventurous swimmers.</p>
+  </div>
+  <div class="card">
+    <img src="aliki-beach.jpg" alt="Aliki Beach">
+    <h2>Aliki Beach</h2>
+    <p>Historic beach with ancient ruins and crystal-clear water.</p>
+  </div>
+  <div class="card">
+    <img src="psili-amos.jpg" alt="Psili Ammos">
+    <h2>Psili Ammos</h2>
+    <p>Fine white sand and lively atmosphere.</p>
+  </div>
+</div>
+<div style="text-align:center; margin-top:20px;">
+  <button class="button" id="prevBtn" style="background:rgb(255, 153, 0); color:#272727; border:none; border-radius:6px; padding:10px 24px; font-size:18px; margin-right:10px; cursor:pointer;">PREV</button>
+  <button class="button" id="nextBtn" style="background:#272727; color:rgb(255, 153, 0); border:none; border-radius:6px; padding:10px 24px; font-size:18px; cursor:pointer;">NEXT</button>
+</div>
+<script>
+// Carousel logic for card slider
+const cards = document.querySelectorAll('.card-slider .card');
+let activeIndex = Array.from(cards).findIndex(card => card.classList.contains('active'));
+if (activeIndex === -1) activeIndex = 0;
+
+function updateActiveCard() {
+  cards.forEach((card, i) => {
+    card.classList.toggle('active', i === activeIndex);
+  });
+}
+
+document.getElementById('prevBtn').onclick = function() {
+  activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+  updateActiveCard();
+};
+document.getElementById('nextBtn').onclick = function() {
+  activeIndex = (activeIndex + 1) % cards.length;
+  updateActiveCard();
+};
+</script>
+</body>
+</html>
